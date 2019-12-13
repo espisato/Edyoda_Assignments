@@ -13,9 +13,9 @@ Write a function numbers_to_chars() to find the characters generated using key 9
 Function Name : numbers_to_chars() Input : Integer number sequence Output : Str
 """
 
-subsets = {'2': ['a', 'b', 'c'], '3': ['d', 'e', 'f'], '4': ['g', 'h', 'i'], '5': ['j', 'k', 'l'], '6': ['m', 'n', 'o'], '7': ['p', 'q', 'r', 's'], '8': ['t', 'u', 'v'], '9': ['w', 'x', 'y', 'z']}
-
 def numbers_to_chars(number_sequence):
+	subsets = {'2': ['a', 'b', 'c'], '3': ['d', 'e', 'f'], '4': ['g', 'h', 'i'], '5': ['j', 'k', 'l'], '6': ['m', 'n', 'o'], '7': ['p', 'q', 'r', 's'], '8': ['t', 'u', 'v'], '9': ['w', 'x', 'y', 'z']}
+
 	output = ""
 	temp_list = [['', 0]]
 	digits = list(str(number_sequence))
@@ -23,10 +23,10 @@ def numbers_to_chars(number_sequence):
 		# to prevent the use of 0s and 1s
 		if digit == '0' or digit == '1':
 			return "0s and 1s not allowed"
-		if digit == temp_list[-1][0]:	# if already exists in temp_list add a count
+		if digit == temp_list[-1][0]:	# if already exists in temp_list, add a count
 			frequency += 1
 			temp_list[-1][1] = frequency
-		else:				# if doesn't exist in temp_list add the character and count 1
+		else:				# if doesn't exist in temp_list, add the character and count 1
 			frequency = 1
 			temp_list.append([digit, frequency])
 	
@@ -51,11 +51,11 @@ def numbers_to_chars(number_sequence):
 	return output
 
 
-print("\n##### Pre-Smartphone keys #####") 
-print("Output generated:", numbers_to_chars(int(input("Enter your number sequence: "))))
+#print("\n##### Pre-Smartphone keys #####") 
+#print("Output generated:", numbers_to_chars(int(input("Enter your number sequence: "))))
 
 
-print("\n########################################################################################################\n")
+#print("\n########################################################################################################\n")
 
 
 """
@@ -83,12 +83,12 @@ def travel_sequence(d):
 	return(sequence)
 
 
-print("\n##### Travel Sequence #####")
-tickets = {"Chennai":"Bangalore","Bombay":"Delhi","Goa":"Chennai","Delhi":"Goa"}
-print("Tickets: {} \n Travel sequence: {}".format(tickets, travel_sequence(tickets)))
+#print("\n##### Travel Sequence #####")
+#tickets = {"Chennai":"Bangalore","Bombay":"Delhi","Goa":"Chennai","Delhi":"Goa"}
+#print("Tickets: {} \n Travel sequence: {}".format(tickets, travel_sequence(tickets)))
 
 
-print("\n########################################################################################################\n")
+#print("\n########################################################################################################\n")
 """
 Given a dictionary that associates the names of states with a list of the names of cities that appear in it,write a program that creates a new dictionary that associates the name of a city with the list of states that it appears in.
 As an example, if the first dictionary is
@@ -103,9 +103,7 @@ cities = {'Hanover': ['New Hampshire'],
 Function Name : city_with_states Input : dict Output : dict
 """
 
-states = {'New Hampshire': ['Concord', 'Hanover'],
-'Massachusetts': ['Boston', 'Concord', 'Springfield'],
-'Illinois': ['Chicago', 'Springfield', 'Peoria'] }
+#states = {'New Hampshire': ['Concord', 'Hanover'],'Massachusetts': ['Boston', 'Concord', 'Springfield'],'Illinois': ['Chicago', 'Springfield', 'Peoria']}
 
 def city_with_states(d):
 	cities = {}
@@ -121,20 +119,19 @@ def city_with_states(d):
 				cities[city].append(key)
 	return cities
 
-print("\n##### Cities associated with states #####")
-print(city_with_states(states))
+#print("\n##### Cities associated with states #####")
+#print(city_with_states(states))
 
 
-print("\n########################################################################################################\n")
+#print("\n########################################################################################################\n")
 
 
 """
 How do you check if a given String contains valid brackets? Given a string containing just the characters '(', ')', '{', '}', '[' and ']', write a program in python to check if the input string is valid. The brackets must close in the correct order, "()" and "()[]{}" are all valid but "(]" and "([)]" are not.
-Function Name : check_brackets Input : str Output : True/False
+Function Name : check_parentheses Input : str Output : True/False
 """
-##### Note: I changed the name "parentheses" to "brackets", because I think that is more suitable #####
 
-def check_brackets(string):
+def check_parentheses(string):
     opening_brackets = '({['
     closing_brackets = ')}]'
     mapping = dict(zip(opening_brackets, closing_brackets))
@@ -149,28 +146,26 @@ def check_brackets(string):
     return not temp
 
 
-print("\n##### Bracket pairing #####")
+#print("\n##### Bracket pairing #####")
 
-strings = ["({[]})", "{}])(", "{}[]()", "(][}{)", "[(([{}]{()}))]"]
-for string in strings:
-	print(f"Input: {string} \n Output:", check_brackets(string))
+#strings = ["({[]})", "{}])(", "{}[]()", "(][}{)", "[(([{}]{()}))]"]
+#for string in strings:
+#	print(f"Input: {string} \n Output:", check_parentheses(string))
 
 
-print("\n########################################################################################################\n")
+#print("\n########################################################################################################\n")
 
 
 
 """
 Write a program to convert Integer to Roman String. For example, if a given integer is 5 then your program should print "V".
 Function Name : int_roman Input : int Output : str
-"""
-
-denominations = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
-roman_literals = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I']
-      
-
+"""      
 
 def int_roman(number):
+	denominations = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1]
+	roman_literals = ['M', 'CM', 'D', 'CD', 'C', 'XC', 'L', 'XL', 'X', 'IX', 'V', 'IV', 'I']
+
 	result = ""
 		
 	"""
@@ -192,11 +187,10 @@ def int_roman(number):
 	return result
 
 
-print("\n##### Integer to Roman Numbers #####")
-print(int_roman(int(input("Enter number: "))))
+#print("\n##### Integer to Roman Numbers #####")
+#print(int_roman(int(input("Enter number: "))))
 
-
-print("\n########################################################################################################\n")
+#print("\n########################################################################################################\n")
 
 
 
@@ -206,21 +200,21 @@ remember that comment start sequences that appear inside python strings should b
 Function Name : count_code_lines Input : str Output : int
 """
 
-input_code = """
+#input_code = """
 #Linear search implementation
 #Takes list and a key as input and returns True or False as answer
-def linear_saerch(l,key):
-    for value in l:
-        if key == value:
-            return True #Return True is key exist
-    else:
-        return False #Return False if key does not exist
-
-l = [100,200,300,400,500,600]
-key = 500
-result = linear_search(l,key)
-print(result)
-"""
+#def linear_saerch(l,key):
+#    for value in l:
+#        if key == value:
+#            return True #Return True is key exist
+#    else:
+#        return False #Return False if key does not exist
+#
+#l = [100,200,300,400,500,600]
+#key = 500
+#result = linear_search(l,key)
+#print(result)
+#"""
 
 def count_code_lines(string):
 	count = 0
@@ -231,11 +225,11 @@ def count_code_lines(string):
 			count += 1
 	return count
 
-print("\n##### Counting code lines #####")
-print("No of lines of code:", count_code_lines(input_code))
-
-
-print("\n########################################################################################################\n")
+#print("\n##### Counting code lines #####")
+#print("No of lines of code:", count_code_lines(input_code))
+#
+#
+#print("\n########################################################################################################\n")
 
 
 """
@@ -287,15 +281,15 @@ def check_password_strength(string):
 
 
 
-print("\n##### Password Validation #####")
+#print("\n##### Password Validation #####")
 
-results = check_password_strength(input("Enter your password: "))
-print(results[0])
-for result in results[1]:
-	print(result)
+#results = check_password_strength(input("Enter your password: "))
+#print(results[0])
+#for result in results[1]:
+#	print(result)
 
 
-print("\n########################################################################################################\n")
+#print("\n########################################################################################################\n")
 
 
 """
@@ -342,17 +336,17 @@ def check_sentence(string):
 	else:
 		return (True, ["Your sentence is syntactically correct!"])
 
-print("\n##### Sentence Validation #####")
+#print("\n##### Sentence Validation #####")
+#
+#results = check_sentence(input("Type your sentence: ")) 
+#if results[0]:
+#	print(results[1][0])
+#else:
+#	for result in results[1]:
+#		print(result)
 
-results = check_sentence(input("Type your sentence: ")) 
-if results[0]:
-	print(results[1][0])
-else:
-	for result in results[1]:
-		print(result)
 
-
-print("\n########################################################################################################\n")
+#print("\n########################################################################################################\n")
 
 
 """
@@ -383,15 +377,15 @@ def greatest_sub_array(array):
 
 	return temp
 
-print("\n##### Greatest Sub Array #####")
-
-array1 = [1, 4, 3, 5, 2, 6, 6]
-print("Array1: ", array1, "\nGSA: ", greatest_sub_array(array1))
-array2 = [1, 5, 3, 3, 4, 5, 3, 6, 5, 7]
-print("Array1: ", array2, "\nGSA: ", greatest_sub_array(array2))
+#print("\n##### Greatest Sub Array #####")
+#
+#array1 = [1, 4, 3, 5, 2, 6, 6]
+#print("Array1: ", array1, "\nGSA: ", greatest_sub_array(array1))
+#array2 = [1, 5, 3, 3, 4, 5, 3, 6, 5, 7]
+#print("Array1: ", array2, "\nGSA: ", greatest_sub_array(array2))
 	
 
-print("\n########################################################################################################\n")
+#print("\n########################################################################################################\n")
 
 
 """
@@ -418,13 +412,13 @@ def adj_sum_even(number_list):
 		return len(odd_list), even_list
 
 
-print("\n##### Even Sum Adjacent elements #####")
-
-number_list = [1, 3, 5, 6, 4, 7, 6, 8, 9, 5, 0, 6, 4, 8, 0]
-result = adj_sum_even(number_list)
-print("Input list: {} \n {} elements removed resulting {} as output.".format(number_list, *result))
-
-
-print("\n########################################################################################################\n")
+#print("\n##### Even Sum Adjacent elements #####")
+#
+#number_list = [1, 3, 5, 6, 4, 7, 6, 8, 9, 5, 0, 6, 4, 8, 0]
+#result = adj_sum_even(number_list)
+#print("Input list: {} \n {} elements removed resulting {} as output.".format(number_list, *result))
+#
+#
+#print("\n########################################################################################################\n")
 
 
