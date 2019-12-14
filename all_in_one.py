@@ -245,15 +245,16 @@ def check_password_strength(string):
 
 	# check length of string
 	if len(string) < 8:
-		reasons.append("The password must be of at least 8 characters.")
+		reasons.append("The length of the password must be at least 8 characters in length")
 
 	# check if all the characters are digits
 	if string.isdigit():
-		reasons.append("The password must contain at least 1 alphabet.")
+		reasons.append("The password must contain at least 1 capital letter")
+		reasons.append("The password must contain at least 1 special character.")
 
 	#check if the first character is iin upper case
 	if string.islower():
-		reasons.append("The password must contain at least 1 uppercase character.") 
+		reasons.append("The password must contain at least 1 capital letter") 
 	
 	# check if string contains at least one digit
 	def check_digit():
@@ -407,16 +408,16 @@ def adj_sum_even(number_list):
 	even_list = [number for number in number_list if number % 2 == 0]
 
 	if len(odd_list) > len(even_list):
-		return len(even_list), odd_list
+		return len(even_list), even_list
 	else:
-		return len(odd_list), even_list
+		return len(odd_list), odd_list
 
 
 #print("\n##### Even Sum Adjacent elements #####")
 #
 #number_list = [1, 3, 5, 6, 4, 7, 6, 8, 9, 5, 0, 6, 4, 8, 0]
 #result = adj_sum_even(number_list)
-#print("Input list: {} \n {} elements removed resulting {} as output.".format(number_list, *result))
+#print("Input list: {} \n {} elements removed: {}".format(number_list, *result))
 #
 #
 #print("\n########################################################################################################\n")
